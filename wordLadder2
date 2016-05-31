@@ -1,0 +1,29 @@
+public class Solution {
+    public List<List<String>> findLadders(String beginWord, String endWord, Set<String> wordList) {
+        List<List<String>> allTransitions = new List<List<String>>();
+        
+        List<String> currentTransition = new ArrayList<String>();
+        return allTransitions;
+    }
+    
+    private boolean isValidTransition(String beginWord, String endWord, Set<String> wordList) {
+        return oneCharDifference(beginWord, endWord) && wordList.contains(endWord);
+    }
+    
+    private boolean oneCharDifference(String beginWord, String endWord) {
+        if (beginWord.length() != endWord.length()) {
+            return false;
+        }
+        boolean oneCharDiff = false;
+        for(int i = 0; i < beginWord.length(); i++) {
+            if(beginWord.charAt(i) != endWord.charAt(i)) {
+                if(oneCharDiff) {
+                    return false;
+                }
+                oneCharDiff = true;
+            }
+        }
+        return oneCharDiff;
+    }
+    
+}

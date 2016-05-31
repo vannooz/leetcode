@@ -1,14 +1,17 @@
 public class Solution {
     public List<List<String>> findLadders(String beginWord, String endWord, Set<String> wordList) {
         List<List<String>> allTransitions = new List<List<String>>();
-        findLaddersInternal (beingWord, endWord, beginWord, wordList, allTransitions);
+        findLaddersInternal (beingWord, endWord, wordList, allTransitions);
         return allTransitions;
     }
     
-    private void findLaddersInternal(String beginWord, String endWord, String currentWord, Set<String> wordList, List<List<String>> results) {
-        
-        
+    private void findLaddersInternal(String beginWord, String endWord, Set<String> wordList, List<List<String>> results) {
     }
+    
+    private void isValidPath(String begin, List<String> path, String end) {
+        return oneCharDifference(begin, path.get(path.size()-1)) && oneCharDifference(path.get(0), end);
+    }
+    
     
     private boolean isValidTransition(String beginWord, String endWord, Set<String> wordList) {
         return oneCharDifference(beginWord, endWord) && wordList.contains(endWord);

@@ -1,9 +1,13 @@
 public class Solution {
     public List<List<String>> findLadders(String beginWord, String endWord, Set<String> wordList) {
         List<List<String>> allTransitions = new List<List<String>>();
-        
-        List<String> currentTransition = new ArrayList<String>();
+        findLaddersInternal (beingWord, endWord, beginWord, wordList, allTransitions);
         return allTransitions;
+    }
+    
+    private void findLaddersInternal(String beginWord, String endWord, String currentWord, Set<String> wordList, List<List<String>> results) {
+        
+        
     }
     
     private boolean isValidTransition(String beginWord, String endWord, Set<String> wordList) {
